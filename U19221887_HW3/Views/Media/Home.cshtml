@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Home Page</h1>
+<h5>Media uploading system</h5>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Description</h2>
+            <p>
+                The system should function by creating a media uploading system which should include a home, files, videos and an about be page.
+                The home page should allow the user to upload a file, Image or video which they should be able to locate in their computer.
+                The files page should contain the files that they uploaded which they should be able to delete or download. The images page should contain the images that they uploaded which they should be able to delete or download.
+                The videos page should contain the videos that should be able to play and they uploaded which they should be able to delete or download. The about me page should have a personal biography with a picture of myself.
+            </p>
+        </div>
+        @using (Html.BeginForm("Home", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-lg-4">
+                <h2>Option Selection</h2>
+                <div>
+                    <div class="radio"> 
+                        <label><input type="radio" name="optradio" value="Document">Document</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Image">Image</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Video">Video</label>
+                    </div>
+                </div>
+                <input type="file" class="form-control" name="ReceiveFile" />
+                <br />
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        }
+    </div>
+</div>
+
